@@ -1,0 +1,14 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/PaddleOCRSharp-VL-1.5/obj
+/.vs/PaddleOCRSharp-VL-1.5/v17
+/.vs/PaddleOCRSharp-VL-1.5/FileContentIndex
+/demo/PaddleOCRSharp-VL-1.5_Demo/bin/Release/net8.0
+/demo/PaddleOCRSharp-VL-1.5_Demo/obj
+/PaddleOCRSharp-VL-1.5/bin/x64/Release
+/demo/PaddleOCRSharp-VL-1.5_Demo/bin
+/PaddleOCRSharp-VL-1.5/bin
+/PaddleOCRSharp-VL-1.5/.vs
+/.vs/PaddleOCRSharp-VL-1.5/CopilotIndices/17.14.1577.30250
