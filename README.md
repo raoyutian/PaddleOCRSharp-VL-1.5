@@ -56,3 +56,5 @@ Each Generate does not retain context and historical records
 5. todo 
 
 Add API support for LLM for example: DeepSeek、Qwen ...
+
+6. If you find it helpful, please feel free to give us a Star and cite our work.
