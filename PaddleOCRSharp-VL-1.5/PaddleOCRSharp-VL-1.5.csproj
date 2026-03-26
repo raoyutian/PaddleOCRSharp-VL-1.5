@@ -1,0 +1,60 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>
+      net35;
+      net40;
+      net45;
+      net461;
+      net47;
+      net48;
+      netstandard2.0;netstandard2.1;
+      net6.0;net7.0;net8.0;net9.0;net10.0
+    </TargetFrameworks>
+    <PackageTags>OCR;Paddle;AI;CV;VL;LLM; PaddleOCR;Table Recognition;Formula Recognition;Chart Recognition;Spotting;Seal Recognition;NET;Csharp;yingtian;raoyutian</PackageTags>
+    <IsPublishable>False</IsPublishable>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <Authors>raoyutian</Authors>
+    <Copyright>Copyright (C) 2026 Guangzhou Yingtian Information Technology Co., Ltd</Copyright>
+    <Company>广州英田信息科技有限公司</Company>
+    <Description>PaddleOCR-VL-1.5 optimized encapsulation library, supports:OCR;Table Recognition;Formula Recognition;Chart Recognition;Spotting;Seal Recognition</Description>
+
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Version>1.0.0.0</Version>
+    <Platforms>x64;AnyCPU;ARM64</Platforms>
+    <PackageIcon>ico.png</PackageIcon>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <ProduceReferenceAssemblies>true</ProduceReferenceAssemblies>
+    <Title>PaddleOCRSharp-VL-1.5</Title>
+    <OSVersion></OSVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net40|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net40|AnyCPU'">
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="libs\**">
+      <Pack>true</Pack>
+      <PackageCopyToOutput>true</PackageCopyToOutput>
+      <PackagePath>build\libs</PackagePath>
+    </None>
+    <None Include=".\ico.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PaddleOCRSharp-VL-1.5.targets">
+      <Pack>true</Pack>
+      <PackageCopyToOutput>true</PackageCopyToOutput>
+      <PackagePath>build</PackagePath>
+    </None>
+  </ItemGroup>
+</Project>

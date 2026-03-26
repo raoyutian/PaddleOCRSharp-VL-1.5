@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36915.13 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaddleOCRSharp-VL-1.5", "PaddleOCRSharp-VL-1.5\PaddleOCRSharp-VL-1.5.csproj", "{D28AD3AE-BFB6-EF37-83A9-79BB7526D3B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "demo", "demo", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaddleOCRSharp-VL-1.5_Demo", "demo\PaddleOCRSharp-VL-1.5_Demo\PaddleOCRSharp-VL-1.5_Demo.csproj", "{BE711E25-82FA-4628-9E92-BBB4C607179F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM64 = Debug|ARM64
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|ARM64 = Release|ARM64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D28AD3AE-BFB6-EF37-83A9-79BB7526D3B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D28AD3AE-BFB6-EF37-83A9-79BB7526D3B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D28AD3AE-BFB6-EF37-83A9-79BB7526D3B8}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{D28AD3AE-BFB6-EF37-83A9-79BB7526D3B8}.Debug|ARM64.Build.0 = Debug|ARM64
+		{D28AD3AE-BFB6-EF37-83A9-79BB7526D3B8}.Debug|x64.ActiveCfg = Debug|x64
+		{D28AD3AE-BFB6-EF37-83A9-79BB7526D3B8}.Debug|x64.Build.0 = Debug|x64
+		{D28AD3AE-BFB6-EF37-83A9-79BB7526D3B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D28AD3AE-BFB6-EF37-83A9-79BB7526D3B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D28AD3AE-BFB6-EF37-83A9-79BB7526D3B8}.Release|ARM64.ActiveCfg = Release|ARM64
+		{D28AD3AE-BFB6-EF37-83A9-79BB7526D3B8}.Release|ARM64.Build.0 = Release|ARM64
+		{D28AD3AE-BFB6-EF37-83A9-79BB7526D3B8}.Release|x64.ActiveCfg = Release|x64
+		{D28AD3AE-BFB6-EF37-83A9-79BB7526D3B8}.Release|x64.Build.0 = Release|x64
+		{BE711E25-82FA-4628-9E92-BBB4C607179F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE711E25-82FA-4628-9E92-BBB4C607179F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE711E25-82FA-4628-9E92-BBB4C607179F}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{BE711E25-82FA-4628-9E92-BBB4C607179F}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{BE711E25-82FA-4628-9E92-BBB4C607179F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BE711E25-82FA-4628-9E92-BBB4C607179F}.Debug|x64.Build.0 = Debug|Any CPU
+		{BE711E25-82FA-4628-9E92-BBB4C607179F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE711E25-82FA-4628-9E92-BBB4C607179F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE711E25-82FA-4628-9E92-BBB4C607179F}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{BE711E25-82FA-4628-9E92-BBB4C607179F}.Release|ARM64.Build.0 = Release|Any CPU
+		{BE711E25-82FA-4628-9E92-BBB4C607179F}.Release|x64.ActiveCfg = Release|Any CPU
+		{BE711E25-82FA-4628-9E92-BBB4C607179F}.Release|x64.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BE711E25-82FA-4628-9E92-BBB4C607179F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D2316788-CB9F-4938-872B-7E0DE0717EBE}
+	EndGlobalSection
+EndGlobal
