@@ -58,3 +58,5 @@ Each Generate does not retain context and historical records
 Add API support for LLM for example: DeepSeek、Qwen ...
 
 6. If you find it helpful, please feel free to give us a Star and cite our work.
+
+7. 如需定制开发请联系QQ：277784829
