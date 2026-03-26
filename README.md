@@ -1,6 +1,6 @@
 # PaddleOCRSharp-VL-1.5
 
-PaddleOCRSharp-VL-1.5 is the PaddleOCR-VL-1.5 optimized encapsulation library, supports:OCR;Table Recognition;Formula Recognition;Chart Recognition;Spotting;Seal Recognition
+PaddleOCRSharp-VL-1.5 is based on the PaddleOCR-VL-1.5 model and utilizes the llama framework's encapsulation library, supports:OCR;Table Recognition;Formula Recognition;Chart Recognition;Spotting;Seal Recognition
 
 # How to use
 
@@ -19,18 +19,18 @@ using PaddleOCRSharp.VL;
 
 string root = AppContext.BaseDirectory;
 root += @"\models\";
-//ÏÂÔØÄ£ĞÍ£¬¼ÙÉè·ÅÔÚmodelsÄ¿Â¼ÏÂ
+//ä¸‹è½½æ¨¡å‹ï¼Œå‡è®¾æ”¾åœ¨modelsç›®å½•ä¸‹
 string model_file = Path.Combine(root, "PaddleOCR-VL-1.5-GGUF.gguf");
 string mmproj_file = Path.Combine(root, "PaddleOCR-VL-1.5-GGUF-mmproj.gguf");
 
-//´´½¨ÒıÇæ¶ÔÏó
+//åˆ›å»ºå¼•æ“å¯¹è±¡
 engine = new PaddleOCRVLEngine();
 try
     {
-      //¼ÓÔØÄ£ĞÍ£¬²ÎÊıÎªÈ«Â·¾¶
+      //åŠ è½½æ¨¡å‹ï¼Œå‚æ•°ä¸ºå…¨è·¯å¾„
       engine.LoadModel(model_file, mmproj_file);
       DateTime dt1 = DateTime.Now;
-      //¸ù¾İÌáÊ¾´Ê£¬´¦ÀíÍ¼Æ¬
+      //æ ¹æ®æç¤ºè¯ï¼Œå¤„ç†å›¾ç‰‡
       string ocrResult = engine.Generate(Prompt.OCR, "test.jpg");
       DateTime dt2 = DateTime.Now;
       var times = (dt2 - dt1).TotalMilliseconds;
@@ -42,7 +42,7 @@ catch (Exception ex)
     }
 finally
     {
-      //°´ĞèÊÍ·Å×ÊÔ´
+      //æŒ‰éœ€é‡Šæ”¾èµ„æº
       //engine?.Release();
     }
      Console.ReadKey();
@@ -55,4 +55,4 @@ Each Generate does not retain context and historical records
 
 5. todo 
 
-Add API support for LLM for example: DeepSeek¡¢Qwen ...
+Add API support for LLM for example: DeepSeekã€Qwen ...
