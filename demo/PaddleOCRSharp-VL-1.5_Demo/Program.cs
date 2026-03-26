@@ -30,7 +30,11 @@ namespace PaddleOCRSharp_VL_1._5_Demo
             catch (Exception ex)
             {
                 Console.WriteLine($"error:\n{ex.Message}");
-               
+            }
+            finally
+            {
+               //按需释放资源
+                //engine?.Release();
             }
             Console.ReadKey();
         }
