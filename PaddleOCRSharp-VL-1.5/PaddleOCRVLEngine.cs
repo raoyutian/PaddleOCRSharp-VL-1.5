@@ -22,19 +22,26 @@ namespace PaddleOCRSharp.VL
     /// </summary>
     public class PaddleOCRVLEngine : EngineBase
     {
+
         #region PaddleOCRVL API
-         /// <summary>
-         /// 非托管推理引擎实例内存地址
-         /// </summary>
-         protected IntPtr enginePtr { get; set; }
+        /// <summary>
+        /// 非托管推理引擎实例内存地址
+        /// </summary>
+        protected IntPtr enginePtr { get; set; }
 
         [DllImport(dllName, CallingConvention = CallingConvention.StdCall, SetLastError = true)]
         internal static extern IntPtr llama_init(string model_file, string mmproj_file, llama_Params llama_params);
         [DllImport(dllName, CallingConvention = CallingConvention.StdCall, SetLastError = true)]
         internal static extern IntPtr llama_initjson(string model_file, string mmproj_file, string llama_params_json);
-       
+
         [DllImport(dllName, CallingConvention = CallingConvention.StdCall, SetLastError = true)]
-        internal static extern IntPtr llama_generate(IntPtr engine_ptr, string prompt, string imagefile);
+        internal static extern bool llama_load_image(IntPtr engine_ptr, string imagefile);
+
+        [DllImport(dllName, CallingConvention = CallingConvention.StdCall, SetLastError = true)]
+        internal static extern bool llama_load_file(IntPtr engine_ptr, string file);
+
+        [DllImport(dllName, CallingConvention = CallingConvention.StdCall, SetLastError = true)]
+        internal static extern IntPtr llama_generate(IntPtr engine_ptr, string prompt);
 
         [DllImport(dllName, CallingConvention = CallingConvention.StdCall, SetLastError = true)]
         internal static extern void llama_release(IntPtr engine_ptr);
@@ -68,9 +75,9 @@ namespace PaddleOCRSharp.VL
         /// <param name="model_file">paddleocr-vl*.guff模型文件</param>
         /// <param name="mmproj_file">paddleocr-vl-mmproj*.guff多模态模型文件</param>
         /// <param name="llama_params">llama_params参数</param>
-        public void  LoadModel(string model_file, string mmproj_file, llama_Params llama_params)
+        public void LoadModel(string model_file, string mmproj_file, llama_Params llama_params)
         {
-            if (llama_params==null) llama_params=new llama_Params();
+            if (llama_params == null) llama_params = new llama_Params();
             enginePtr = llama_init(model_file, mmproj_file, llama_params);
             if (enginePtr == IntPtr.Zero) throw new Exception("Initialize err：" + GetLastError());
         }
@@ -87,21 +94,43 @@ namespace PaddleOCRSharp.VL
         }
 
         /// <summary>
+        /// 上传图片
+        /// </summary>
+        /// <param name="imagefile">图像文件</param>
+        /// <returns>是否成功</returns>
+        public bool LoadImage(string imagefile)
+        {
+            ZeroThrow(enginePtr);
+            return llama_load_image(enginePtr, imagefile);
+        }
+
+
+        /// <summary>
+        /// 上传文件
+        /// </summary>
+        /// <param name="file">文本文件</param>
+        /// <returns>是否成功</returns>
+        public bool LoadFile(string file)
+        {
+            ZeroThrow(enginePtr);
+            return llama_load_file(enginePtr, file);
+        }
+
+        /// <summary>
         /// 根据prompt提示词处理
         /// </summary>
         /// <param name="prompt">提示词</param>
-        /// <param name="imagefile">图像文件</param>
-        /// <returns></returns>
-        public string Generate(string prompt, string imagefile)
+        /// <returns>结果</returns>
+        public string Generate(string prompt)
         {
             ZeroThrow(enginePtr);
-            var ptrResult = llama_generate(enginePtr, prompt, imagefile);
+            var ptrResult = llama_generate(enginePtr, prompt);
             return ConvertResult(ptrResult);
         }
         /// <summary>
         /// 结果解析
         /// </summary>
-        /// <param name="ptrResult"></param>
+        /// <param name="ptrResult">字符串指针</param>
         /// <returns></returns>
         private string ConvertResult(IntPtr ptrResult)
         {
@@ -138,7 +167,7 @@ namespace PaddleOCRSharp.VL
             }
             finally
             {
-                Marshal.FreeHGlobal(ptrResult); 
+                Marshal.FreeHGlobal(ptrResult);
             }
             return result;
         }

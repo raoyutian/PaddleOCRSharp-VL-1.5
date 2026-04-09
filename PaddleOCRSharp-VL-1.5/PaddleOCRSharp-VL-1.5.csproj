@@ -16,12 +16,12 @@
     <Authors>raoyutian</Authors>
     <Copyright>Copyright (C) 2026 Guangzhou Yingtian Information Technology Co., Ltd</Copyright>
     <Company>广州英田信息科技有限公司</Company>
-    <Description>PaddleOCR-VL-1.5 optimized encapsulation library, supports:OCR;Table Recognition;Formula Recognition;Chart Recognition;Spotting;Seal Recognition</Description>
+    <Description>PaddleOCR-VL-1.5 optimized encapsulation library, supports:OCR;Table Recognition;Formula Recognition;Chart Recognition;Spotting;Seal Recognition;Qwen;DeepSeek-R1</Description>
 
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
-    <Version>1.0.0.0</Version>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.1.0.0</FileVersion>
+    <Version>1.1.0.0</Version>
     <Platforms>x64;AnyCPU;ARM64</Platforms>
     <PackageIcon>ico.png</PackageIcon>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -40,7 +40,7 @@
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="libs\**">
+    <None Include="$(SolutionDir)PaddleOCRSharp-VL-1.5\libs\**">
       <Pack>true</Pack>
       <PackageCopyToOutput>true</PackageCopyToOutput>
       <PackagePath>build\libs</PackagePath>
